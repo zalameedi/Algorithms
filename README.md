@@ -1,3 +1,3 @@
 # algorithms
 Data structures implementations &
-Interview questions snatched from Amazon, Google, Microsoft geeksforgeeks, topcoder, hackerrank etc.
+Interview questions snatched from Amazon, Google, Microsoft, geeksforgeeks, topcoder, hackerrank etc.
