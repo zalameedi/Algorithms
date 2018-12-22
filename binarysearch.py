@@ -1,4 +1,4 @@
-#Sequential search implementation
+#Binary search implementation
 import sys
 import os
 
@@ -7,32 +7,37 @@ i=0
 for i in range(0,1000):
     main_L.append(i)
 
-
-def sequentialSearch(L, x):
+def binarySearch(L, x):
+    first = 0
+    last = len(L)-1
     found = False
-    index = 0
-    ls_size = len(L)
-    while (index < ls_size):
-        try:
-            if(L[index] == x):
-                found = True
-                return found
+    
+    # remember to init new first/last - 1 to accomodate loops condition
+    # eventually
+    while first <= (last):
+        mid = (first+last)//2
+        if L[mid] == x:
+            found = True
+            return found 
+        else:
+            if L[mid] > x:
+                last = mid-1
+            elif L[mid] < x:
+                first = mid+1
             else:
-                index += 1
-        except:
-            sys.excepthook()
+                first = last
     return found
+
 
 def main():
     global main_L
-    x = sequentialSearch(main_L, 21)
-    y = sequentialSearch(main_L, 112)
-    z = sequentialSearch(main_L, 708)
-    q = sequentialSearch(main_L, 1337)
+    x = binarySearch(main_L, 21)
+    y = binarySearch(main_L, 112)
+    z = binarySearch(main_L, 708)
+    q = binarySearch(main_L, 1337)
     if x and y and z and not q:
-        print("Sequential search success.")
+        print("Binary search success.")
 
 if __name__ == '__main__':
     main()
-
 
